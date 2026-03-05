@@ -31,14 +31,14 @@ Other providers (S3/CloudFront, Firebase, etc.) are supported as long as they ca
 
 1. Install Node.js (already done).  
 2. Run `npm install` to install dependencies.  
-3. Use `npm run build` to generate `./_site` directory.  
+3. Use `npm run build` to generate the `./_site` directory.  
 4. Use `npm run serve` for a local development server with live reload.
 
 Source files are mostly Markdown (`.md`) under the root, `docs/` and `blog/`.  
 Layouts and partials live in `_includes/`.
 
 ### Blog system
-
+created a post for me
 - Add markdown posts to `blog/posts/` with frontmatter (`title`, `layout`).  
 - The blog index at `blog/index.md` iterates the `collections.blog` posts.  
 - Run `npm run build` to update the site; Eleventy will generate HTML automatically.

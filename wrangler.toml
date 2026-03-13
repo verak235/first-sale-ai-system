@@ -1,0 +1,5 @@
+name = "first-sale-ai-system"
+compatibility_date = "2026-03-13"
+
+[assets]
+directory = "./"

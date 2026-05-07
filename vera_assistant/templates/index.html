@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vera's AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Vera's AI Assistant</h1>
+      <p class="site-subtitle">Your purpose-driven productivity companion&nbsp;🤍</p>
+    </div>
+  </header>
+
+  <!-- ── Mode Selector ────────────────────────────────────────────── -->
+  <nav class="mode-nav" role="tablist" aria-label="Assistant mode">
+    <button class="mode-btn active" data-mode="content"  role="tab" aria-selected="true">
+      <span class="mode-icon">✍️</span>
+      <span class="mode-label">Content Creator</span>
+      <span class="mode-desc">Scripts, captions, posts &amp; emails</span>
+    </button>
+    <button class="mode-btn" data-mode="chatbot" role="tab" aria-selected="false">
+      <span class="mode-icon">💬</span>
+      <span class="mode-label">Audience Voice</span>
+      <span class="mode-desc">Reply to questions as Vera</span>
+    </button>
+    <button class="mode-btn" data-mode="business" role="tab" aria-selected="false">
+      <span class="mode-icon">📋</span>
+      <span class="mode-label">Business Planner</span>
+      <span class="mode-desc">Funnels, products &amp; calendars</span>
+    </button>
+  </nav>
+
+  <!-- ── Context Bar (content-type selector shown only in content mode) ── -->
+  <div class="context-bar" id="contextBar">
+    <label for="contentType" class="context-label">Content type:</label>
+    <select id="contentType" class="context-select">
+      <option value="youtube-script">YouTube Script</option>
+      <option value="instagram-caption">Instagram Caption</option>
+      <option value="blog-post">Blog Post</option>
+      <option value="email-newsletter">Email Newsletter</option>
+      <option value="facebook-post">Facebook Post</option>
+      <option value="pinterest-description">Pinterest Description</option>
+    </select>
+  </div>
+
+  <!-- ── Main Chat ─────────────────────────────────────────────────── -->
+  <main class="chat-wrap">
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg assistant welcome-msg">
+        <div class="msg-bubble">
+          <p>Hi Vera! 🤍 I'm here to help you create content, connect with your audience, and plan your business — all in your authentic voice.</p>
+          <p>Choose a mode above and tell me what you'd like to work on today.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <textarea
+        id="userInput"
+        class="user-input"
+        rows="3"
+        placeholder="What would you like help with today?"
+        aria-label="Your message"
+      ></textarea>
+      <div class="input-actions">
+        <button id="resetBtn" class="btn-secondary" title="Start a new conversation">
+          New Conversation
+        </button>
+        <button id="sendBtn" class="btn-primary" title="Send message">
+          Send&nbsp;✨
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
